@@ -23,6 +23,10 @@ docker-compose.yml
 *.db
 *.sql
 *.sqlite
+# Ignore everything in the /db directory
+/db/*
+# But don't ignore the README.md file
+!/db/README.md
 
 # Ignore environment and configuration files
 .env
@@ -38,3 +42,4 @@ logs/
 # Ignore system files
 .DS_Store
 Thumbs.db
+
