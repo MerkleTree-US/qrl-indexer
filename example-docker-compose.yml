@@ -1,0 +1,46 @@
+version: '3.4'
+services:
+# Blockchain node
+  qrl-node:
+    build: ./node
+    user: "1000:1000"
+    ports:
+      - "19000:19000"
+      - "19009:19009"
+      - "19008:19008"
+      - "19007:19007"
+      - "52134:52134"
+      - "18090:18090"
+      - "18091:18091"
+      - "19010:19010"
+    volumes:
+      - ./node/qrl:/home/qrl/.qrl/
+    networks:
+      - qrl-network
+    restart: unless-stopped
+
+  mysql:
+    image: mysql:8.0
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: my-secret-pw
+      MYSQL_DATABASE: mydatabase
+      MYSQL_USER: myuser
+      MYSQL_PASSWORD: mypassword
+    volumes:
+      - ./db/.database:/var/lib/mysql
+    networks:
+      - qrl-network
+
+  qrl-indexer:
+    build: ./app
+    depends_on:
+      - qrl-node
+      - mysql
+    networks:
+      - qrl-network
+
+# QRL Network for node functions
+networks:
+  qrl-network:
+    driver: bridge
