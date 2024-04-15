@@ -15,7 +15,7 @@ build/
 *.eggs
 
 # Ignore Docker files
-Dockerfile
+#Dockerfile
 docker-compose.yml
 #*.dockerignore
 
@@ -29,8 +29,10 @@ docker-compose.yml
 !/db/README.md
 # Ignore everything in the /node directory
 /node/*
-# But don't ignore the README.md file
+# But don't ignore the README.md or dockerfile file
 !/node/README.md
+!/node/Dockerfile
+
 # Ignore environment and configuration files
 .env
 *.ini
