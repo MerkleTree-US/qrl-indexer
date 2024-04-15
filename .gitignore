@@ -1,0 +1,40 @@
+# .gitignore
+
+# Ignore Python build artifacts
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.egg-info/
+*.eggs
+
+# Ignore Docker files
+Dockerfile
+docker-compose.yml
+#*.dockerignore
+
+# Ignore database files
+*.db
+*.sql
+*.sqlite
+
+# Ignore environment and configuration files
+.env
+*.ini
+*.json
+*.yaml
+*.yml
+
+# Ignore logs
+logs/
+*.log
+
+# Ignore system files
+.DS_Store
+Thumbs.db
