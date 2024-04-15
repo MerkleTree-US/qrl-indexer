@@ -1,0 +1,6 @@
+[submodule "app/qrl"]
+	path = app/qrl
+	url = https://github.com/theQRL/QRL
+[submodule "app/googleapis"]
+	path = app/googleapis
+	url = https://github.com/googleapis/googleapis.git
