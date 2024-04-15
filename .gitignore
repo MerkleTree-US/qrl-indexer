@@ -27,7 +27,10 @@ docker-compose.yml
 /db/*
 # But don't ignore the README.md file
 !/db/README.md
-
+# Ignore everything in the /node directory
+/node/*
+# But don't ignore the README.md file
+!/node/README.md
 # Ignore environment and configuration files
 .env
 *.ini
